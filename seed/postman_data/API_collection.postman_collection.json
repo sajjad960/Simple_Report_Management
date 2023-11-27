@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "5c41f07b-c8ad-4641-948b-dcec5f6db482",
+		"name": "BlockStakReportManagementMERN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15404094",
+		"_collection_link": "https://www.postman.com/lively-satellite-481034/workspace/blockstakreportmanagementmern/collection/15404094-5c41f07b-c8ad-4641-948b-dcec5f6db482?action=share&source=collection_link&creator=15404094"
+	},
+	"item": [
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Create Report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"stationName\": \"Putin Fm\",\n    \"stationChannel\": \"99,9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/reports"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Reports",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmFlZDM3OGNlMjQxOWZjZjBlZTkxZCIsImlhdCI6MTY5NDE2NzAwOSwiZXhwIjoxNjk0MTcwNjA5fQ.4IGkYQ1V4YATKSBCu613J82uu8KFzlZ_JV_PFg7gBCg",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:6006/api/v1/reports"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Report",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"stationName\": \"Dribble FM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/reports/62891d473d4ecb9b3a0b5b5f",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reports",
+								"62891d473d4ecb9b3a0b5b5f"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Report",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/reports/62891d473d4ecb9b3a0b5b5f"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Sign Up",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"sajjad\",\n    \"phone\": \"01650103297\",\n    \"address\": \"mahammadpur\",\n    \"profession\": \"full stack developer\",\n    \"favoriteColors\": [\"black\", \"blue\"],\n    \"email\": \"sajjad@gmail.com\",\n    \"password\": \"sajjad5522\",\n    \"passwordConfirm\": \"sajjad5522\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/users/signup"
+							},
+							"response": []
+						},
+						{
+							"name": "Sign In",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"check@gmail.com\",\n    \"password\": \"sajjad5522\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/users/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Genarate Refresh Token",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": "{{url}}/users/refresh-token"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
