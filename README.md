@@ -2,7 +2,9 @@
 
 Report Management System
 
-- For given task I built this application, implemented user actions services, admin actions services and also genarated refresh token.
+-implemented user basic action (login/register, get reports)
+-implemented basic admin actions services(create,edit,delete,update reports)
+-implement api for genarated refresh token.
 
 ## Technology used
 
